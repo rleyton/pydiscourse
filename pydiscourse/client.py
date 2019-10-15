@@ -84,7 +84,7 @@ class DiscourseClient(object):
         """
         return self._get("/admin/users/{0}.json".format(user_id))
 
-    def invite(self,email,group_names,custom_message, **kwargs):
+    def invite(self, email, group_names, custom_message, **kwargs):
         """
         Invite a user by email to join your forum
 
@@ -95,7 +95,7 @@ class DiscourseClient(object):
             **kwargs: ???? what else can be sent through?
 
         Returns:
-            ????
+            API response body (dict)
 
         """
         return self._post(
@@ -106,7 +106,7 @@ class DiscourseClient(object):
             **kwargs
         )
 
-    def invite_link(self,email,group_names,custom_message, **kwargs):
+    def invite_link(self, email, group_names, custom_message, **kwargs):
         """
         Generate an invite link for a user to join your forum
 
@@ -1347,6 +1347,7 @@ class DiscourseClient(object):
             params: dictionary of parameters to include to the API
 
         Returns:
+            dictionary of response body data or None
 
         """
         params["api_key"] = self.api_key
